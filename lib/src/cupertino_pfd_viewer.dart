@@ -9,16 +9,16 @@ import '../pdf_viewer_plugin.dart';
 class CupertinoPdfViewer implements PdfViewerPlatform {
   @override
   Widget build({
-    BuildContext context,
-    CreationParams creationParams,
-    Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers,
+    BuildContext? context,
+    CreationParams? creationParams,
+    Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers,
   }) {
     return UiKitView(
       viewType: 'pdf_viewer_plugin',
       onPlatformViewCreated: (int id) {},
       gestureRecognizers: gestureRecognizers,
       creationParams:
-          MethodChannelPdfViewerPlatform.creationParamsToMap(creationParams),
+          MethodChannelPdfViewerPlatform.creationParamsToMap(creationParams!),
       creationParamsCodec: const StandardMessageCodec(),
     );
   }

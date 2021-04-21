@@ -17,9 +17,9 @@ import '../pdf_viewer_plugin.dart';
 class AndroidPdfViewer implements PdfViewerPlatform {
   @override
   Widget build({
-    BuildContext context,
-    CreationParams creationParams,
-    Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers,
+    BuildContext? context,
+    CreationParams? creationParams,
+    Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers,
   }) {
     return GestureDetector(
       // We prevent text selection by intercepting the long press event.
@@ -37,7 +37,7 @@ class AndroidPdfViewer implements PdfViewerPlatform {
         gestureRecognizers: gestureRecognizers,
         layoutDirection: TextDirection.rtl,
         creationParams:
-            MethodChannelPdfViewerPlatform.creationParamsToMap(creationParams),
+            MethodChannelPdfViewerPlatform.creationParamsToMap(creationParams!),
         creationParamsCodec: const StandardMessageCodec(),
       ),
     );
